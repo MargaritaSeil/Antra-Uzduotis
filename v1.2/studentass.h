@@ -22,8 +22,8 @@ class Studentass{
   public:
     Studentass() {}
     ~Studentass() {} //destructor
-    Studentass(const Studentass &s) {} //copy constructor
-    Studentass &operator=(const Studentass &s) {}
+    Studentass(const Studentass &s) = default; //copy constructor
+    Studentass &operator=(const Studentass &s) = default;
     
     void setVardas(std::string s) { vardas_ = s; }
     void setPavarde(std::string s) { pavarde_ = s; }
