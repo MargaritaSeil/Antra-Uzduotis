@@ -41,7 +41,6 @@ int main() {
   
   grupeStudentaiStruct.reserve(nStudentai);
 
-  start = std::chrono::high_resolution_clock::now();
   generateList(grupeStudentaiStruct, nStudentai, nPaz);
 
   sort(grupeStudentaiStruct.begin(), grupeStudentaiStruct.end(), compareNamesStruct);
@@ -54,10 +53,6 @@ int main() {
 
   grupeStudentaiStruct.clear();
   grupeStudentaiStruct.shrink_to_fit();
-  end = std::chrono::high_resolution_clock::now();
-  diff = end-start;
-  cout << nStudentai << " studentų failo kurimas/sortinimas ";
-  cout << diff.count() << "s" << endl;
 
   //--------------STRUCT------------//
 

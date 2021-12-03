@@ -44,20 +44,6 @@ bool compareNamesStruct(studentas a, studentas b){
 	return a.vardas.compare(b.vardas) < 0;
 }
 
-// title of write to file 
-/*
-void writeTitle(std::ofstream &file){
-
-  if(file.is_open()){
-    file<<std::setw(15)<<std::left<<"Vardas"<<std::setw(15)<<std::left<<"Pavarde"<<std::setw(15)<<std::left<<"Galutinis"<<std::setw(15)
-    <<"\n-------------------------------------------\n";
-  }
-  else {
-    std::cout << "negalima įrašyti. ";
-  }
-}
-*/
-
 // write to file 
 void writeResults(studentas kint, std::ofstream &file){
 
