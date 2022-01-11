@@ -1,5 +1,5 @@
-#ifndef STUDENTAS_H    
-#define STUDENTAS_H    
+#ifndef STUDENTAS_H     //make sure not already exist
+#define STUDENTAS_H     //define
 
 #include <iostream>
 #include <iomanip>
@@ -10,6 +10,8 @@
 #include <chrono>
 #include <algorithm>
 #include <numeric>
+#include <list>
+#include <deque>
 
 struct studentas{
     std::string vardas, pavarde;
@@ -18,18 +20,12 @@ struct studentas{
     float galutinis_paz;
 };
 
-void generateList(std::vector<studentas> &grupe, int nStudentai, int nPaz);
-
-//void writeTitle(std::ofstream &file);
-void writeResults(studentas kint, std::ofstream &file);
-void writeGeneratedListTitle(int nPaz, std::ofstream &file);
-void writeGeneratedList(studentas kint, std::ofstream &file);
+void writeResults(studentas, std::ofstream &file);
 
 void readFile(std::ifstream &file, std::vector<studentas> &grupe);
 
 void pazSkaic(std::vector<studentas> &grupe);
 
-int randomNumber();
 bool compareNamesStruct(studentas a, studentas b);
 bool isLowGradeStruct(studentas kint);
 
