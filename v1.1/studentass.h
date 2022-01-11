@@ -21,7 +21,7 @@ class Studentass{
   
   public:
     Studentass() {}
-    
+    ~Studentass() { paz_.clear(); }
     void setVardas(std::string s) { vardas_ = s; }
     void setPavarde(std::string s) { pavarde_ = s; }
     void setPaz(float paz) { paz_.push_back(paz); }
@@ -34,10 +34,13 @@ class Studentass{
     float getEgz() const { return egz_; }
     float getGal() const { return galutinis_paz_; }
     
-    void readFile(std::ifstream &file, std::vector<Studentass> &grupe, Studentass &studentas);
-    
+    void pazClear() { paz_.clear(); }
+    void pazPop() { paz_.pop_back(); }
+
     void pazSkaic();
 };
+
+void readFile(std::ifstream &file, std::vector<Studentass> &grupe);
 
 void writeTitle(std::ofstream &file); 
 void writeResults(std::ofstream &file, Studentass a);
