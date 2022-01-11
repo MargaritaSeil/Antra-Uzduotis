@@ -21,9 +21,9 @@ class Studentass{
   
   public:
     Studentass() {}
-    ~Studentass() {} //destructor
-    Studentass(const Studentass &s) = default; //copy constructor
-    Studentass &operator=(const Studentass &s) = default;
+    ~Studentass() { paz_.clear(); }
+    Studentass(const Studentass &s); //copy constructor
+    Studentass &operator=(const Studentass &s) = default; //copy assignment operator
     
     void setVardas(std::string s) { vardas_ = s; }
     void setPavarde(std::string s) { pavarde_ = s; }
@@ -37,21 +37,17 @@ class Studentass{
     float getEgz() const { return egz_; }
     float getGal() const { return galutinis_paz_; }
     
-    void clearPaz(){ paz_.clear(); }
+    void pazClear() { paz_.clear(); }
+    void pazPop() { paz_.pop_back(); }
 
-    void readFile(std::ifstream &file, std::vector<Studentass> &grupe, Studentass &studentas);
     void pazSkaic();
 };
 
-void generateList(std::vector<Studentass> &grupe, int nStudentai, int nPaz);
-
-void writeGeneratedListTitle(int nPaz, std::ofstream &file);
-void writeGeneratedList(std::ofstream &file, Studentass a);
+void readFile(std::ifstream &file, std::vector<Studentass> &grupe);
 
 void writeTitle(std::ofstream &file); 
 void writeResults(std::ofstream &file, Studentass a);
-
-int randomNumber();   
+    
 bool compareNames(Studentass a, Studentass b);
 bool isLowGrade(Studentass a);
 
