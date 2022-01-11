@@ -1,32 +1,36 @@
 #include "studentass.h"
 
-void Studentass::readFile(std::ifstream &file, std::vector<Studentass> &grupe, Studentass &studentas){
-  float readPaz;
-  std::string readLine;
-  
-  paz_.clear();
-  if(file.is_open()){
-    getline(file, readLine);
-    while(getline(file, readLine)) {
-      std::istringstream iss(readLine);
-      iss >> vardas_ >> pavarde_;
-      
-      while(iss >> readPaz){
-        paz_.push_back(readPaz);
-        egz_ = readPaz;
-      }
-			paz_.pop_back();
-      grupe.push_back(studentas);
-      paz_.clear();
-    }
-  }
-  else{ std::cout << "neišeina atidaryti failo"; }
-}
-
 void Studentass::pazSkaic() {
   float vid;
   vid=std::accumulate(paz_.begin(), paz_.end(), 0.0) / paz_.size();
   galutinis_paz_ = 0.4 * vid + 0.6 * egz_;
+}
+
+void readFile(std::ifstream &file, std::vector<Studentass> &grupe){
+  Studentass stud;
+  float readPaz;
+  std::string readLine, vardas, pavarde;
+  
+  stud.pazClear();
+  if(file.is_open()){
+    getline(file, readLine);
+    while(getline(file, readLine)) {
+      std::istringstream iss(readLine);
+
+      iss >> vardas >> pavarde;
+      stud.setVardas(vardas);
+      stud.setPavarde(pavarde);
+
+      while(iss >> readPaz){
+        stud.setPaz(readPaz);
+        stud.setEgz(readPaz);
+      }
+			stud.pazPop();
+      grupe.push_back(stud);
+      stud.pazClear();
+    }
+  }
+  else{ std::cout << "neišeina atidaryti failo"; }
 }
 
 void writeTitle(std::ofstream &file) {
