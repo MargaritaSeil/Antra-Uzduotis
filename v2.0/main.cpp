@@ -28,7 +28,7 @@ int main1() {
   
   cout << std::fixed;
 
-  for(int i = 1000; i <= 1000; i=i*10){
+  for(int i = 100000; i <= 1000000; i=i*10){
     fn = to_string(i) + " studentu sarasas.txt";
     varg = to_string(i) + " vargsiukai.txt";
     kiet = to_string(i) + " kietiakai.txt";
