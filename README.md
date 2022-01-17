@@ -5,4 +5,3 @@ Realizuoti operatoriai:
 * copy assignment operator;
 * destructor;
 * lyginimo operatoriai.
-
