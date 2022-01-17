@@ -47,4 +47,10 @@ TEST_CASE("ifKietiakai") {
   REQUIRE(ifKietiakai(4) == false);
 }
 ```
-
+# Naudojimosi instrukcija
+1) Parsisiųsti main.cpp, studentass.cpp, studentass.h, asmuo.cpp ir asmuo.h failus.
+2) Paleisti per VS, VSC ar Code::Blocks, aš naudojau - VSC, galima atsidarius terminalą paleisti komandą:
+```
+$ g++ studentas.cpp asmuo.cpp main.cpp -O3 -o myprogram
+$ ./myprogram
+```
