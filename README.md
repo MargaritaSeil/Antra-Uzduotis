@@ -1,5 +1,5 @@
 # Antra-Uzduotis
-#v1.2
+# v1.2
 Realizuoti operatoriai:
 * copy constructor;
 * copy assignment operator;
